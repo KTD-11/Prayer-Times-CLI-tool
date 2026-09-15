@@ -43,8 +43,9 @@ Output:
 | git        | ^2.55.0 |
 | curl       | ^8.22.0 |
 | cjson      | ^1.7.19 |
+| gcc        | ^16.2.1 |
 
-All four dependencies exist on all major package managers (apt, pacman, etc.) and can be installed with a single command.
+All five dependencies exist on all major package managers (apt, pacman, etc.) and can be installed with a single command.
 
 Example for pacman:
 
