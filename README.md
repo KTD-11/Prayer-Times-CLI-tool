@@ -19,16 +19,18 @@ Output:
 ```
 ✦───────────────────────────────────────✦
              Prayer Times
-        US, New-York · 15 Sep 2026
+        US, New-York · 16 Sep 2026
 ✦───────────────────────────────────────✦
 
-           Fajr          05:20
-           Sunrise       06:37
+           Fajr          05:22
+           Sunrise       06:38
            Dhuhr         12:51
-           Asr           16:23
-           Maghrib       19:05
-           Isha          20:21
+           Asr           16:22
+           Maghrib       19:03
+           Isha          20:19
            Last Third    02:46
+
+  Upcoming: Lastthird  Reamining: 04:45
 
 ✦───────────────────────────────────────✦
 ```
