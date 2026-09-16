@@ -15,6 +15,7 @@ void printFinal(char *countryCode, char *cityName, prayerObject Prayers)
   printf("           Maghrib       %s\n", Prayers.Maghrib);
   printf("           Isha          %s\n", Prayers.Isha);
   printf("           Last Third    %s\n", Prayers.Lastthird);
-
+  printf("\n");
+  printf("  Upcoming: %s  Reamining: %02d:%02d\n", Prayers.upcoming, Prayers.timeToUpcoming / 60, Prayers.timeToUpcoming % 60);
   printf("\n✦───────────────────────────────────────✦\n");
 }
