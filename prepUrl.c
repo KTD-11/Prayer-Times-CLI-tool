@@ -26,12 +26,20 @@ strSlice getMonthDataSubSection(struct tm timeStruct);
 
 strSlice getDayDataSubSection(struct tm timeStruct);
 
+struct tm getTimeStruct();
+
+struct tm getTimeStruct()
+{
+  time_t timeObject = time(NULL);
+  struct tm timeStruct = *localtime(&timeObject);
+  return timeStruct;
+}
+
 char *getFullUrl(const char *cityName, const char *countryCode)
 {
   char *URL = NULL;
 
-  time_t timeObject = time(NULL);
-  struct tm timeStruct = *localtime(&timeObject);
+  struct tm timeStruct = getTimeStruct();
 
   strSlice dateYearSection = getYearDateSubSection(timeStruct);
   strSlice dateMonthSection = getMonthDataSubSection(timeStruct);
@@ -177,4 +185,9 @@ strSlice getDayDataSubSection(struct tm timeStruct)
     .str = dayString,
     .count = 2
   };
+}
+
+int getCurrentTimeStampInt(struct tm timeStruct)
+{
+ return timeStruct.tm_hour * 60 + timeStruct.tm_min;
 }
