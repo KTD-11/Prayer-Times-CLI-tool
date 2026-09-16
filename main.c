@@ -1,6 +1,6 @@
 
 /*
- * prayer — a CLI prayer-times tool
+ * prayer: a CLI prayer-times tool
  * Copyright (C) 2026 <Your Name>
  *
  * This program is free software: you can redistribute it and/or modify
