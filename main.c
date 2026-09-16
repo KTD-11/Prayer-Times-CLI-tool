@@ -27,6 +27,7 @@
 #include "curlUtils.c"
 #include "cjsonUtils.c"
 #include "printUtils.c"
+#include "counterToUpcoming.c"
 
 typedef enum errorTypes {
   NONE,
@@ -34,14 +35,15 @@ typedef enum errorTypes {
   CURL_MEMORY_ALLOCATION,
   CURL_FETCHING,
   CURL_INIT,
-  cJSON_PARSING
+  cJSON_PARSING,
+  TIME_TO_UPCOMING
 } errorTypes;
 
 int main(int argc, char *argv[])
 {
   if (argc < 3)
   {
-    fprintf(stderr, "USAGE: prayer <countryCode> <cityName>");
+    fprintf(stderr, "USAGE: prayer <countryCode> <cityName>\n");
     goto endFailure;
   }
 
@@ -73,8 +75,15 @@ int main(int argc, char *argv[])
     goto end;
   }
 
-  end:
+  addTimerToUpcoming(&Prayers, getCurrentTimeStampInt(getTimeStruct()));
 
+  if (Prayers.upcoming == NULL)
+  {
+    errorStatus = TIME_TO_UPCOMING;
+    goto end;
+  }
+
+  end:
   switch (errorStatus) {
     case URL_PARSEING:
       free(URL);
@@ -99,6 +108,11 @@ int main(int argc, char *argv[])
       free(res.body);
       goto endCleanFailure;
 
+    case TIME_TO_UPCOMING:
+      fprintf(stderr, "Fatal Error: System ran into a problem while parsing prayers for the upcoming prayer .Terminating with status 1\n");
+      free(res.body);
+      cJSON_Delete(Prayers.root);
+      goto endCleanFailure;
     default:
       printFinal(argv[1], argv[2], Prayers);
       cJSON_Delete(Prayers.root);
