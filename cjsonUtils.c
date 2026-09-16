@@ -3,7 +3,9 @@
 
 typedef struct prayerObject {
   short status; // 0 -> success, 1 -> failure
+  int timeToUpcoming;
   cJSON *root;
+  const char *upcoming;
   const char *date;
   const char *Fajr;
   const char *Sunrise;
@@ -83,6 +85,8 @@ char *getStrFromcJSON(const cJSON *entryBlock, const char *entryName)
 prayerObject initPrayersFromcJSONEntryBlock(const cJSON *entryBlock)
 {
   return (prayerObject) {
+    .upcoming = NULL,
+    .timeToUpcoming = 0,
     .Fajr = getStrFromcJSON(entryBlock, "Fajr"),
     .Sunrise  = getStrFromcJSON(entryBlock, "Sunrise"),
     .Dhuhr = getStrFromcJSON(entryBlock, "Dhuhr"),
