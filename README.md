@@ -50,7 +50,7 @@ All five dependencies exist on all major package managers (apt, pacman, etc.) an
 Example for pacman:
 
 ```bash
-sudo pacman -S git make curl cjson
+sudo pacman -S git make curl cjson gcc
 ```
 
 ### Installation
