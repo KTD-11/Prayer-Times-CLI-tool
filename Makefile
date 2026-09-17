@@ -1,6 +1,6 @@
 CC      = gcc
 CFLAGS  = -Wall -Wextra -O2
-LDLIBS  = -lcurl $(shell pkg-config --libs libcjson)
+LDLIBS  = -lcurl -lcjson
 CFLAGS += $(shell pkg-config --cflags libcjson)
 PREFIX  = /usr/local
 
