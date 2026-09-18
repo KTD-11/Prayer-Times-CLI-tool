@@ -48,7 +48,7 @@ errorTypes generateDefaultConfig(int argc, char **argv) {
   fclose(configFile);
 
   // making sure that the number of characters written is as it should
-  if (charactersWritten != strlen(argv[2]) + strlen(argv[3]) + 1)
+  if (charactersWritten != (int)(strlen(argv[2]) + strlen(argv[3]) + 1))
     return SET_DEFAULT_UNABLE_TO_ACCESS_FILE;
 
   return SUCCESSFULLY_ADDED;
