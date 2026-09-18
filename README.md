@@ -1,14 +1,22 @@
 # Prayer CLI Tool
 
-The tool works by fetching the prayer times from the public API: [aladhan.com](https://aladhan.com/prayer-times-api) and prints them to the terminal in a formatted way.
+The tool works by fetching prayer times from the public API [aladhan.com](https://aladhan.com/prayer-times-api) and prints them to the terminal in a formatted way.
 
-### Usage
+## Usage
 
 ```bash
 prayer <countryCode> <cityName>
 ```
 
-An example use case, along with the printed output, is the following:
+### Optional Flags
+
+| Flag                                    | Description |
+| ---------------------------------------- | ----------- |
+| `--help`                                 | Display the help menu  |
+| `--set-default <countryCode> <cityName>` | Sets default values for `countryCode` and `cityName` so you can call `prayer` directly without specifying them each time. You can change them again with the same flag, or still call the tool with explicit arguments. |
+| `--version`                              | Displays the current version of the tool |
+
+### Example
 
 ```bash
 prayer US New-York
@@ -35,9 +43,9 @@ Output:
 ✦───────────────────────────────────────✦
 ```
 
-> **Note:** the input is case insensitive. The only condition is that city names consisting of more than one word must be hyphenated (as shown in the example above, `New-York`).
+> **Note:** Input is case-insensitive. City names consisting of more than one word must be hyphenated (as shown above, `New-York`).
 
-### Dependencies
+## Dependencies
 
 | Dependency | Version |
 | ---------- | ------- |
@@ -47,7 +55,7 @@ Output:
 | cjson      | ^1.7.19 |
 | gcc        | ^16.2.1 |
 
-All five dependencies exist on all major package managers (apt, pacman, etc.) and can be installed with a single command.
+All five dependencies are available on major package managers (apt, pacman, etc.) and can be installed with a single command.
 
 Example for pacman:
 
@@ -55,7 +63,7 @@ Example for pacman:
 sudo pacman -S git make curl cjson gcc
 ```
 
-### Installation
+## Installation
 
 ```bash
 git clone https://github.com/KTD-11/Prayer-Times-CLI-tool.git
@@ -66,6 +74,6 @@ sudo make install
 
 That's pretty much it!
 
-### License
+## License
 
-This project is licensed under the GNU General Public License v3.0. see [LICENSE](LICENSE) for details.
+This project is licensed under the GNU General Public License v3.0. See [LICENSE](LICENSE) for details.
