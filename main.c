@@ -167,7 +167,7 @@ end:
     goto endFailure;
 
   case VERSION_REQUEST:
-    printf("prayers v1.2.0\n");
+    printf("prayers v1.2.2\n");
     return EXIT_SUCCESS;
 
   case SUCCESSFULLY_ADDED:
