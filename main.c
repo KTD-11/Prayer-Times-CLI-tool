@@ -171,7 +171,7 @@ end:
     return EXIT_SUCCESS;
 
   case SUCCESSFULLY_ADDED:
-    printf("Successfully added default settings; you can now call `prayer` "
+    printf("\nSuccessfully added default settings; you can now call `prayer` "
            "directly without needing to specify the arguemnt.\n"
            "You can always change the defaults with the same flag or call the "
            "tool regularly with the normal arguemnts\n");
@@ -181,15 +181,15 @@ end:
     printf("Usage: prayers <countryCode> <cityName>\n"
            "Options:\n"
            "--help                                    Display the help menu "
-           "(this one)\n"
+           "(this one)\n\n"
            "--set-default <countryCode> <cityName>    Sets default values for "
            "countryCode and cityName so that you're able to call `prayer` "
-           "directly\n"
+           "directly\n\n"
            "                                          without needing to "
            "specify them with each call. You can always change them with the "
            "same flag, or call the tool regularly\n"
            "--version                                 Displays the current "
-           "version of the tool\n");
+           "version of the tool\n\n");
     return EXIT_SUCCESS;
 
   case RETRIEVE_FAIL_TO_ACCESS:
